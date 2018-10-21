@@ -8,7 +8,6 @@
 
 namespace Creational\Builder\Response\Components;
 
-
 class Header
 {
 

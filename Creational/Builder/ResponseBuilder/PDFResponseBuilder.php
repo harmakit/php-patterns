@@ -8,12 +8,12 @@
 
 namespace Creational\Builder\ResponseBuilder;
 
-
-use Creational\Builder\Components\Message;
 use Creational\Builder\Response\Components\Header;
 use Creational\Builder\Response\Components\HTTPCode;
+use Creational\Builder\Response\Components\Message;
 use Creational\Builder\Response\PDFResponse;
 use Creational\Builder\Response\Response;
+
 
 class PDFResponseBuilder implements BuilderInterface
 {
@@ -22,28 +22,28 @@ class PDFResponseBuilder implements BuilderInterface
      */
     private $pdfResponse;
 
-    public function createResponse(): Response
+    public function createResponse(): BuilderInterface
     {
         $this->pdfResponse = new PDFResponse();
-        return $this->pdfResponse;
+        return $this;
     }
 
-    public function addHeader(): Response
+    public function addHeader(): BuilderInterface
     {
         $this->pdfResponse->addData('header', new Header());
-        return $this->pdfResponse;
+        return $this;
     }
 
-    public function addHTTPCode(): Response
+    public function addHTTPCode(): BuilderInterface
     {
         $this->pdfResponse->addData('HTTPcode', new HTTPCode());
-        return $this->pdfResponse;
+        return $this;
     }
 
-    public function addMessage(): Response
+    public function addMessage(): BuilderInterface
     {
         $this->pdfResponse->addData('message', new Message());
-        return $this->pdfResponse;
+        return $this;
     }
 
     public function getResponse(): Response

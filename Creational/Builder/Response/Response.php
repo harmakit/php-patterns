@@ -8,7 +8,6 @@
 
 namespace Creational\Builder\Response;
 
-
 abstract class Response
 {
     private $data = [];

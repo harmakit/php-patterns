@@ -11,13 +11,13 @@ use Creational\Builder\Response\Response;
 
 interface BuilderInterface
 {
-    public function createResponse(): Response;
+    public function createResponse(): BuilderInterface;
 
-    public function addHeader(): Response;
+    public function addHeader(): BuilderInterface;
 
-    public function addHTTPCode(): Response;
+    public function addHTTPCode(): BuilderInterface;
 
-    public function addMessage(): Response;
+    public function addMessage(): BuilderInterface;
 
     public function getResponse(): Response;
 }

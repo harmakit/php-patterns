@@ -6,7 +6,7 @@
  * Time: 10:54
  */
 
-namespace Creational\Builder\Components;
+namespace Creational\Builder\Response\Components;
 
 
 class Message

@@ -6,6 +6,8 @@
  * Time: 11:07
  */
 
+namespace Creational\Builder;
+
 use Creational\Builder\ResponseBuilder\BuilderInterface;
 use Creational\Builder\Response\Response;
 
