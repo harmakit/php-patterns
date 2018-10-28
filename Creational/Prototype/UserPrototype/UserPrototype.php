@@ -13,6 +13,12 @@ abstract class UserPrototype
 {
     protected $role;
     private $id;
+    private $data;
+
+    public function __construct()
+    {
+        $this->data = new UserData();
+    }
 
     abstract public function __clone();
 
