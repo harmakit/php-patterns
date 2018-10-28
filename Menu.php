@@ -52,6 +52,7 @@ class Menu
         print (
             '1 - Builder' . PHP_EOL .
             '2 - FactoryMethod' . PHP_EOL .
+            '3 - Prototype' . PHP_EOL .
             self::MENU_EXIT . ' - Exit' . PHP_EOL .
             self::MENU_BACK . ' - Back' . PHP_EOL
         );
@@ -93,6 +94,14 @@ class Menu
                 break;
             case '2':
                 \Creational\FactoryMethod\Test::do();
+                print PHP_EOL;
+                break;
+            case '3':
+                print('Prototype: ' . PHP_EOL);
+                \Creational\Prototype\PrototypeTest::do();
+                print PHP_EOL;
+                print('Initiating: ' . PHP_EOL);
+                \Creational\Prototype\InitiatingTest::do();
                 print PHP_EOL;
                 break;
         }
