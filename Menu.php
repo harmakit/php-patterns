@@ -97,11 +97,12 @@ class Menu
                 print PHP_EOL;
                 break;
             case '3':
-                print('Prototype: ' . PHP_EOL);
-                \Creational\Prototype\PrototypeTest::do();
-                print PHP_EOL;
                 print('Initiating: ' . PHP_EOL);
                 \Creational\Prototype\InitiatingTest::do();
+                print PHP_EOL;
+                print('Prototype: ' . PHP_EOL);
+                \Creational\Prototype\PrototypeTest::do();
+                print('Prototypes lose in time, but there may be a memory usage improvement' . PHP_EOL);
                 print PHP_EOL;
                 break;
         }

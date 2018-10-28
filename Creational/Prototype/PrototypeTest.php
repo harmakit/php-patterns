@@ -23,21 +23,18 @@ class PrototypeTest
         $sellerFixtures = [];
 
         $start = microtime(true);
-        $usage = memory_get_usage(true);
         for ($i = 1; $i < 100000; $i++) {
             $user = clone $buyerUserPrototype;
             $user->setId($i);
             $buyerFixtures[] = $user;
         }
-        for ($i = 100000; $i < 1500000; $i++) {
+        for ($i = 100000; $i < 150000; $i++) {
             $user = clone $sellerUserPrototype;
             $user->setId($i);
             $sellerFixtures[] = $user;
         }
-        $usage = memory_get_usage(true) - $usage;
         $time_elapsed_secs = microtime(true) - $start;
         print('Time: ' . $time_elapsed_secs . PHP_EOL);
-        print('Memory usage: ' . $usage . PHP_EOL);
 
     }
 }
