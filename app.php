@@ -6,10 +6,13 @@
  * Time: 22:25
  */
 require_once __DIR__ . '/vendor/autoload.php';
+require_once 'Menu.php';
 
+$menu = new Menu();
 
-\Creational\Builder\Test::do();
-print PHP_EOL;
+$menu->printMenu('main');
 
-\Creational\FactoryMethod\Test::do();
-print PHP_EOL;
+while (true) {
+    $menu->read($input);
+    $menu->act($input);
+}
