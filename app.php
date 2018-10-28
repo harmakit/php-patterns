@@ -7,4 +7,9 @@
  */
 require_once __DIR__ . '/vendor/autoload.php';
 
+
 \Creational\Builder\Test::do();
+print PHP_EOL;
+
+\Creational\FactoryMethod\Test::do();
+print PHP_EOL;
