@@ -14,7 +14,8 @@ class Menu
     private $current;
     private $menus = [
         'main',
-        'creational'
+        'creational',
+        'structural'
     ];
 
     public function printMenu($menu, $clear = true)
@@ -35,6 +36,9 @@ class Menu
             case 'creational':
                 $this->printCreationalMenu();
                 break;
+            case 'structural':
+                $this->printStructuralMenu();
+                break;
         }
 
     }
@@ -43,7 +47,19 @@ class Menu
     {
         print (
             '1 - Creational' . PHP_EOL .
+            '2 - Structural' . PHP_EOL .
+            PHP_EOL .
             self::MENU_EXIT . ' - Exit' . PHP_EOL
+        );
+    }
+
+    private function printStructuralMenu()
+    {
+        print (
+//            '1 - Facade' . PHP_EOL .
+            PHP_EOL .
+            self::MENU_EXIT . ' - Exit' . PHP_EOL .
+            self::MENU_BACK . ' - Back' . PHP_EOL
         );
     }
 
@@ -53,6 +69,8 @@ class Menu
             '1 - Builder' . PHP_EOL .
             '2 - FactoryMethod' . PHP_EOL .
             '3 - Prototype' . PHP_EOL .
+            '4 - ObjectPool' . PHP_EOL .
+            PHP_EOL .
             self::MENU_EXIT . ' - Exit' . PHP_EOL .
             self::MENU_BACK . ' - Back' . PHP_EOL
         );
@@ -80,8 +98,21 @@ class Menu
         elseif ($this->current === 'creational') {
             $this->creationalItems($input);
         }
+        elseif ($this->current === 'structural') {
+            $this->structuralItems($input);
+        }
 
         print PHP_EOL;
+    }
+
+    private function structuralItems($item)
+    {
+        $this->clear();
+        switch ($item) {
+
+        }
+
+        $this->printMenu($this->current, false);
     }
 
     private function creationalItems($item)
@@ -102,6 +133,10 @@ class Menu
                 print PHP_EOL;
                 print('Initiating: ' . PHP_EOL);
                 \Creational\Prototype\InitiatingTest::do();
+                print PHP_EOL;
+                break;
+            case '4':
+                \Creational\ObjectPool\Test::do();
                 print PHP_EOL;
                 break;
         }
